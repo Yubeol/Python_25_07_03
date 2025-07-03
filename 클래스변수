@@ -1,0 +1,13 @@
+class Family:
+    lastName="강" # 클래스변수
+
+my=Family()
+your=Family()
+print(my.lastName)
+print(your.lastName)
+Family.lastName="강"
+print(my.lastName)
+print(your.lastName)
+Family.lastName="홍"
+print(my.lastName)
+print(your.lastName)
