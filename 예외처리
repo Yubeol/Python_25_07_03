@@ -4,8 +4,10 @@ while True:
         inb=int(input("두번째 숫자 입력: "))
         res=ina/inb
         print(ina,'/',inb,'=',res)
-        
-    except ZeroDivisionError as e:
+    except ZeroDivisionError as e: # 최 하위 구조를 먼저 호출해야한다.
         print('오류:',e)
-        
+    except Exception as e: 
+        print(e)
+
+
  
