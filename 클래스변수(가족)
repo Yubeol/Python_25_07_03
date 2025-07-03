@@ -1,0 +1,26 @@
+class Family:
+    lastName='강' # 클래스 변수
+    def __init__(self, firstName, birth='20250703'):
+        self.firstName = firstName
+        self.birth = birth
+
+    def __str__(self):
+        str='당신의 가족은 {}씨성을 쓰고\n'.format(self.lastName)
+        str+='당신의 이름은 %s입니다.\n'%(self.firstName)
+        str+=f'즉, 당신의 이름은 {self.lastName} {self.firstName}입니다.'
+        return str
+
+    def setLastName(self, lastName):
+        self.lastName = lastName
+
+    def out(self):
+        print('당신의 이름은 %s%s이고, %s에 태어났다.' % (self.lastName, self.firstName, self.birth))
+
+my=Family('의실')
+print(my)
+print()
+you=Family('길동')
+Family.lastName='고' # you.setLastName('붕')
+print(you)
+print()
+my.out()
