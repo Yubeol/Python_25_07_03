@@ -1,0 +1,8 @@
+#modTest.py
+import mod1
+ina=int(input('첫번째 숫자 입력: '))
+inb=int(input('두번째 숫자 입력: '))
+addres=mod1.add(ina,inb)
+subres=mod1.sub(ina,inb)
+print(f'{ina} + {inb} = {addres}')
+print(f'{ina} - {inb} = {subres}')
