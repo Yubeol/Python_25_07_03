@@ -1,0 +1,55 @@
+#fourCal.py
+class FourCal:
+    def __init__(self):
+        self.no1=0
+        self.no2=0
+
+    def setdata(self,no1,no2):
+        self.no1=no1 # self.no는 메서드의 맴버 변수, 뒤에no1는 호출할때 쓰는 매개변수 둘이 다르다.
+        self.no2=no2
+
+    def getdata(self):
+        return self.no1,self.no2
+
+    def add(self):
+        return self.no1+self.no2
+
+    def sub(self):
+        return self.no1-self.no2
+
+    def mul(self):
+        return self.no1*self.no2
+
+    def div(self):
+        return self.no1/self.no2
+
+class FourCalEx(FourCal): # 2개 속성. 7개의 메서드(setdata, + - * / **)< ()안에 안쓰더라도 생성자 메서드가 들어가있어 총 7개의 메서드가 있음.
+    def expr(self):
+        return self.no1**self.no2
+
+    def div(self): # 오버라이드 부모의 메서드를 자식이 고쳐쓴다
+        if self.no2==0:
+            print('0으로 나누기가 발생했습니다. 확인 후 처리 바함.')
+            return 0
+        else:
+            return self.no1/self.no2
+
+# c1=FourCal()
+# c1.setdata(1,2)
+# print('c1계산기 a:{},b:{}, +: {}, -: {}, *: {}, /: {}'.format(c1.no1,c1.no2, c1.add(),c1.sub(),c1.mul(),c1.div()))
+#
+# # 2방식 1방식이 더 좋음
+# c2=FourCal()
+# c2.no1=100
+# c2.no2=20
+# print('c2계산기',c2.add(),c2.sub(),c2.mul(),c2.div())
+
+# c3=FourCalEx()
+# c3.setdata(1,2)
+# print(c3.no1,c3.no2)
+# print('c3의 연산 %d, %d'%(c3.add(),c3.expr()))
+
+c4=FourCalEx()
+c4.setdata(10,0)
+c4res=c4.div()
+print('c4나누기 결과 {} / {} = {}'.format (c4.no1,c4.no2,c4res))
