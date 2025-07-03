@@ -1,0 +1,15 @@
+#mod1.py
+def add(a,b):
+    return a+b
+
+def sub(a,b):
+    return a-b
+
+if __name__ == '__main__': # 다른곳에서 mo1을 호출할때 출력이 겹치지 않기 위해 사용.
+    print(add(10,2))
+    print(sub(10,2))
+
+#modTest2.py
+import mod1
+print(mod1.add(10,2))
+
